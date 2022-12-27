@@ -1,0 +1,20 @@
+{
+  "name": "react-floating-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IZY-UI/React-Floating-Button.git"
+  },
+  "keywords": [],
+  "author": "Dhanushka I Dewinuwara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IZY-UI/React-Floating-Button/issues"
+  },
+  "homepage": "https://github.com/IZY-UI/React-Floating-Button#readme"
+}
