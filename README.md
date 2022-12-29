@@ -26,8 +26,8 @@ Install my-project with npm
 Install my-project with npm
 
 ```bash
-  npm install my-project
-  cd my-project
+  "boxicons": "^2.1.4",
+  "sass": "^1.56.1",
 ```
 
 ## Demo
@@ -93,7 +93,7 @@ Everything under the IZY component Library
 
 [MIT]()
 
-## Icon Library License
+## BOXIcon Library License
 Copyright (c) 2015-2021 Aniket Suvarna
 
 [MIT]()
