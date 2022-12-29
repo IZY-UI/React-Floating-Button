@@ -1,7 +1,8 @@
 
-# IZY Floating Button
-
+# IZY Floating Button 
 Floating action button for React.js
+
+
 ![banner](https://user-images.githubusercontent.com/108319691/209987824-b29f08cb-d202-4974-bd53-886925b739d9.png)
 
 
