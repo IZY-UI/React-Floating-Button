@@ -31,6 +31,7 @@ Install my-project with npm
 ## Demo
 
 Create ```index.js``` and Add below code segment
+And given files add to your component folder 
 
 ```bash
 import IzyFloat from './components/IzyFloat';
