@@ -23,8 +23,6 @@ Install my-project with npm
 
 ## Install dependancis
 
-Install my-project with npm
-
 ```bash
   "boxicons": "^2.1.4",
   "sass": "^1.56.1",
