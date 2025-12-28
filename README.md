@@ -1,111 +1,278 @@
+# 🎯 IZY Floating Button
 
-# IZY Floating Button 
-Floating action button for React.js
+Modern, accessible floating action button component for React with TypeScript support.
 
+![npm version](https://img.shields.io/npm/v/@izy-ui/react-floating-button)
+![license](https://img.shields.io/npm/l/@izy-ui/react-floating-button)
+![bundle size](https://img.shields.io/bundlephobia/minzip/@izy-ui/react-floating-button)
 
-![banner](https://user-images.githubusercontent.com/108319691/209987824-b29f08cb-d202-4974-bd53-886925b739d9.png)
+## ✨ Features
 
+- 🎨 **Customizable Colors** - 8 preset themes + custom colors
+- 📍 **Flexible Positioning** - 4 corner positions
+- 📏 **Multiple Sizes** - Small, medium, and large
+- 🎭 **Smooth Animations** - Powered by Framer Motion
+- ♿ **Fully Accessible** - ARIA labels, keyboard navigation (Tab, Enter, Escape)
+- 🔔 **Badge Support** - Show notification counts
+- 💡 **Tooltips** - Helpful labels on hover
+- 📱 **Responsive** - Works on all screen sizes
+- ⌨️ **TypeScript** - Full type safety
+- 🎯 **Tree-shakeable** - Optimized bundle size
+- 🌙 **Dark Mode Ready** - Adapts to your theme
 
-
-
-## Table of content
-
- - [Install npm](#)
- - [Install dependancis](#)
- - [Demo](#)
-
-
-## Install npm
-
-Install my-project with npm
+## 📦 Installation
 
 ```bash
-  npm install my-project
-  cd my-project
+npm install @izy-ui/react-floating-button framer-motion lucide-react
 ```
 
-## Install dependancis
+or
 
 ```bash
-  "boxicons": "^2.1.4",
-  "sass": "^1.56.1",
+yarn add @izy-ui/react-floating-button framer-motion lucide-react
 ```
 
-## Demo
+## 🚀 Quick Start
 
-Create ```index.js``` and Add below code segment
-And given files add to your component folder 
-
-```bash
-import IzyFloat from './components/IzyFloat';
+```tsx
+import { IzyFloat } from '@izy-ui/react-floating-button';
+import { Home, Phone, Mail } from 'lucide-react';
 
 function App() {
-  const path=[
-    {key: 1, title: 'Home', page: '/home', icon:'home'},
-    {key: 2, title: 'Contact', page: '/contact', icon:'headphone'},
-    {key: 3, title: 'Info', page: '/info', icon:'info-circle'}
+  const actions = [
+    { key: 1, label: 'Home', icon: Home, href: '/home' },
+    { key: 2, label: 'Contact', icon: Phone, href: '/contact' },
+    { key: 3, label: 'Email', icon: Mail, href: 'mailto:hello@example.com' }
   ];
-  const onClick =(e)=>{
-    console.log(e);
-  }
+  
   return (
-    <div className="App">
-      <IzyFloat 
-      direction='bottom-left'
-      locations={path}
-      basecolor="primary"
-      onClick={onClick}
-       />      
-    </div>
+    <IzyFloat 
+      actions={actions}
+      position="bottom-right"
+      color="primary"
+    />
   );
 }
-
-export default App;
-
 ```
-## Environment Variables
 
-To run this project, you will need to use following variables as a props
+## 📖 API Reference
 
-| Parameter | Type     | Description                |Default    |
-| :-------- | :------- | :------------------------- |:-------|
-| `direction` | top-left , top-right , bottom-left, bottom-right | Button placement area |bottom-right|
-| `basecolor` | primary , secondary , success, danger, warning, info, dark | Button colors |dark|
+### IzyFloat Props
 
-Also need to specify the button like bellow
-| Property | Value(Example)     | Description                |
-| :-------- | :------- | :------------------------- |
-| `key` | Any number ( 1 )| Identify the button |
-| `title` | text data( Home )| Name of the button |
-| `page` | link ( /home )| Add the link |
-| `Icon` | name of the icon ( info-circle )| Name of the icon on ```boxicons``` library <box-icon name=```'info-circle'```></box-icon> |
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `actions` | `FloatingButtonAction[]` | **required** | Array of action buttons |
+| `position` | `'top-left' \| 'top-right' \| 'bottom-left' \| 'bottom-right'` | `'bottom-right'` | Button placement |
+| `color` | `'primary' \| 'secondary' \| 'success' \| 'danger' \| 'warning' \| 'info' \| 'dark' \| 'light'` | `'dark'` | Color theme |
+| `customColor` | `string` | `undefined` | Custom color (hex, rgb, hsl) |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | Button size |
+| `showTooltips` | `boolean` | `true` | Show tooltips on hover |
+| `onClick` | `(isOpen: boolean) => void` | `undefined` | Main button click handler |
+| `onOpen` | `() => void` | `undefined` | Callback when menu opens |
+| `onClose` | `() => void` | `undefined` | Callback when menu closes |
+| `mainIcon` | `LucideIcon` | `Plus` | Custom icon for main button |
+| `ariaLabel` | `string` | `'Floating action menu'` | Accessibility label |
+| `style` | `CSSProperties` | `undefined` | Custom styles |
+| `className` | `string` | `undefined` | Custom class name |
+| `animationDuration` | `number` | `0.3` | Animation duration in seconds |
+| `disabled` | `boolean` | `false` | Disable the component |
 
-Follow the bellow example for more details
+### FloatingButtonAction
 
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `key` | `string \| number` | ✅ | Unique identifier |
+| `label` | `string` | ✅ | Display label |
+| `icon` | `LucideIcon` | ✅ | Icon component from lucide-react |
+| `href` | `string` | ❌ | URL to navigate to |
+| `onClick` | `(action) => void` | ❌ | Click handler |
+| `disabled` | `boolean` | ❌ | Disable this action |
+| `ariaLabel` | `string` | ❌ | Accessibility label |
+| `badge` | `number` | ❌ | Notification badge count |
+| `color` | `FloatingButtonColor` | ❌ | Custom color for this action |
 
-## Used By
+## 💡 Examples
 
-This library is used by companies:
+### Basic Usage
 
-- [Synapsys LTD](https://synapsys.lk/)
+```tsx
+import { IzyFloat } from '@izy-ui/react-floating-button';
+import { Home, Settings, User } from 'lucide-react';
 
+const actions = [
+  { key: 1, label: 'Home', icon: Home, href: '/' },
+  { key: 2, label: 'Settings', icon: Settings, href: '/settings' },
+  { key: 3, label: 'Profile', icon: User, href: '/profile' }
+];
 
-## License
-Everything under the IZY component Library
+<IzyFloat actions={actions} />
+```
 
-[MIT]()
+### With Click Handlers
 
-## BOXIcon Library License
-Copyright (c) 2015-2021 Aniket Suvarna
+```tsx
+const actions = [
+  { 
+    key: 1, 
+    label: 'Share', 
+    icon: Share2, 
+    onClick: (action) => {
+      console.log('Sharing...', action);
+      // Your share logic
+    }
+  },
+  { 
+    key: 2, 
+    label: 'Like', 
+    icon: Heart, 
+    onClick: () => console.log('Liked!')
+  }
+];
 
-[MIT]()
+<IzyFloat 
+  actions={actions}
+  onOpen={() => console.log('Menu opened')}
+  onClose={() => console.log('Menu closed')}
+/>
+```
 
+### With Badges
 
+```tsx
+const actions = [
+  { 
+    key: 1, 
+    label: 'Messages', 
+    icon: MessageCircle, 
+    badge: 5,
+    href: '/messages'
+  },
+  { 
+    key: 2, 
+    label: 'Notifications', 
+    icon: Bell, 
+    badge: 12,
+    href: '/notifications'
+  }
+];
 
+<IzyFloat actions={actions} color="primary" />
+```
 
-## Authors
+### Custom Colors
 
-- [Dhanushka Dewinuwara](https://www.linkedin.com/in/didewinuwara/)  ```didewinuwara@outlook.com```
+```tsx
+<IzyFloat 
+  actions={actions}
+  customColor="#FF6B6B"
+  position="top-right"
+/>
+```
 
-## Appreciation
-- [Amitha Mirihella](https://www.linkedin.com/in/amitha-mirihella/)
+### Different Sizes
+
+```tsx
+// Small
+<IzyFloat actions={actions} size="small" position="top-left" />
+
+// Medium (default)
+<IzyFloat actions={actions} size="medium" position="top-right" />
+
+// Large
+<IzyFloat actions={actions} size="large" position="bottom-left" />
+```
+
+### Disabled State
+
+```tsx
+const actions = [
+  { key: 1, label: 'Active', icon: Check },
+  { key: 2, label: 'Disabled', icon: X, disabled: true }
+];
+
+<IzyFloat actions={actions} />
+```
+
+### Without Tooltips
+
+```tsx
+<IzyFloat 
+  actions={actions}
+  showTooltips={false}
+/>
+```
+
+## 🎨 Color Themes
+
+Available preset colors:
+- `primary` - Blue (#007BFF)
+- `secondary` - Gray (#6C757D)
+- `success` - Green (#28A745)
+- `danger` - Red (#DC3545)
+- `warning` - Orange (#FFA100)
+- `info` - Cyan (#17A2B8)
+- `dark` - Black (#000000)
+- `light` - White (#F0F1F2)
+
+## ♿ Accessibility
+
+The component is fully accessible and includes:
+
+- **ARIA labels** - Proper labeling for screen readers
+- **Keyboard navigation** - Tab to focus, Enter to activate, Escape to close
+- **Focus management** - Clear focus indicators
+- **Reduced motion** - Respects `prefers-reduced-motion` setting
+
+## 🎭 Animations
+
+Powered by Framer Motion for smooth, performant animations:
+
+- Spring physics for natural motion
+- Staggered appearance of action buttons
+- Smooth rotation of main button
+- Configurable animation duration
+
+## 📱 Responsive Design
+
+The component automatically adapts to different screen sizes:
+
+- Optimized spacing for mobile devices
+- Touch-friendly button sizes
+- Proper positioning on all viewports
+
+## 🔧 TypeScript Support
+
+Full TypeScript support with exported types:
+
+```tsx
+import type { 
+  IzyFloatProps, 
+  FloatingButtonAction,
+  FloatingButtonPosition,
+  FloatingButtonColor,
+  FloatingButtonSize 
+} from '@izy-ui/react-floating-button';
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+MIT © [Dhanushka I Dewinuwara](https://www.linkedin.com/in/didewinuwara/)
+
+## 🙏 Credits
+
+- Icons by [Lucide](https://lucide.dev/)
+- Animations by [Framer Motion](https://www.framer.com/motion/)
+
+## 📞 Support
+
+- 📧 Email: didewinuwara@outlook.com
+- 🐛 Issues: [GitHub Issues](https://github.com/IZY-UI/React-Floating-Button/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/IZY-UI/React-Floating-Button/discussions)
+
+---
+
+Made with ❤️ by [Dhanushka Dewinuwara](https://www.linkedin.com/in/didewinuwara/)

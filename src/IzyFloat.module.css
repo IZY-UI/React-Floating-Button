@@ -1,0 +1,330 @@
+:root {
+  /* Color Palette */
+  --ifb-primary: #007BFF;
+  --ifb-secondary: #6C757D;
+  --ifb-success: #28A745;
+  --ifb-danger: #DC3545;
+  --ifb-warning: #FFA100;
+  --ifb-info: #17A2B8;
+  --ifb-light: #F0F1F2;
+  --ifb-dark: #000000;
+
+  /* Spacing */
+  --ifb-spacing-sm: 8px;
+  --ifb-spacing-md: 12px;
+  --ifb-spacing-lg: 16px;
+
+  /* Sizes */
+  --ifb-size-small: 40px;
+  --ifb-size-medium: 56px;
+  --ifb-size-large: 72px;
+
+  --ifb-icon-small: 20px;
+  --ifb-icon-medium: 24px;
+  --ifb-icon-large: 32px;
+
+  /* Effects */
+  --ifb-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --ifb-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  /* Z-index */
+  --ifb-z-index: 1000;
+
+  /* Border Radius */
+  --ifb-radius: 50%;
+
+  /* Transitions */
+  --ifb-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ifb-container {
+  position: fixed;
+  z-index: var(--ifb-z-index);
+  display: flex;
+  gap: var(--ifb-spacing-md);
+}
+
+/* Positions */
+.ifb-container.top-left {
+  top: var(--ifb-spacing-lg);
+  left: var(--ifb-spacing-lg);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ifb-container.top-right {
+  top: var(--ifb-spacing-lg);
+  right: var(--ifb-spacing-lg);
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ifb-container.bottom-left {
+  bottom: var(--ifb-spacing-lg);
+  left: var(--ifb-spacing-lg);
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+
+.ifb-container.bottom-right {
+  bottom: var(--ifb-spacing-lg);
+  right: var(--ifb-spacing-lg);
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+/* Main Button */
+.ifb-main-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--ifb-radius);
+  cursor: pointer;
+  box-shadow: var(--ifb-shadow);
+  transition: var(--ifb-transition);
+  outline: none;
+  color: white;
+}
+
+.ifb-main-button:hover:not(:disabled) {
+  box-shadow: var(--ifb-shadow-hover);
+  transform: scale(1.05);
+}
+
+.ifb-main-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.ifb-main-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ifb-main-button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Sizes */
+.ifb-main-button.small {
+  width: var(--ifb-size-small);
+  height: var(--ifb-size-small);
+}
+
+.ifb-main-button.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.ifb-main-button.large {
+  width: var(--ifb-size-large);
+  height: var(--ifb-size-large);
+}
+
+.ifb-main-button.small svg {
+  width: var(--ifb-icon-small);
+  height: var(--ifb-icon-small);
+}
+
+.ifb-main-button.medium svg {
+  width: var(--ifb-icon-medium);
+  height: var(--ifb-icon-medium);
+}
+
+.ifb-main-button.large svg {
+  width: var(--ifb-icon-large);
+  height: var(--ifb-icon-large);
+}
+
+/* Colors */
+.ifb-main-button.primary {
+  background-color: var(--ifb-primary);
+}
+
+.ifb-main-button.secondary {
+  background-color: var(--ifb-secondary);
+}
+
+.ifb-main-button.success {
+  background-color: var(--ifb-success);
+}
+
+.ifb-main-button.danger {
+  background-color: var(--ifb-danger);
+}
+
+.ifb-main-button.warning {
+  background-color: var(--ifb-warning);
+}
+
+.ifb-main-button.info {
+  background-color: var(--ifb-info);
+}
+
+.ifb-main-button.dark {
+  background-color: var(--ifb-dark);
+}
+
+.ifb-main-button.light {
+  background-color: var(--ifb-light);
+  color: var(--ifb-dark);
+}
+
+/* Action Buttons */
+.ifb-actions {
+  display: flex;
+  flex-direction: inherit;
+  gap: var(--ifb-spacing-sm);
+}
+
+.ifb-action-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ifb-spacing-sm);
+}
+
+.ifb-action-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--ifb-radius);
+  cursor: pointer;
+  box-shadow: var(--ifb-shadow);
+  transition: var(--ifb-transition);
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
+
+.ifb-action-button:hover:not(:disabled) {
+  box-shadow: var(--ifb-shadow-hover);
+  transform: scale(1.1);
+}
+
+.ifb-action-button:active:not(:disabled) {
+  transform: scale(0.9);
+}
+
+.ifb-action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ifb-action-button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Action Button Sizes */
+.ifb-action-button.small {
+  width: 36px;
+  height: 36px;
+}
+
+.ifb-action-button.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.ifb-action-button.large {
+  width: 60px;
+  height: 60px;
+}
+
+.ifb-action-button.small svg {
+  width: 18px;
+  height: 18px;
+}
+
+.ifb-action-button.medium svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ifb-action-button.large svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Tooltip */
+.ifb-tooltip {
+  position: absolute;
+  padding: 6px 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: calc(var(--ifb-z-index) + 1);
+}
+
+.ifb-container.top-left .ifb-tooltip,
+.ifb-container.bottom-left .ifb-tooltip {
+  left: calc(100% + var(--ifb-spacing-sm));
+}
+
+.ifb-container.top-right .ifb-tooltip,
+.ifb-container.bottom-right .ifb-tooltip {
+  right: calc(100% + var(--ifb-spacing-sm));
+}
+
+/* Badge */
+.ifb-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ifb-danger);
+  color: white;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ifb-container {
+    gap: var(--ifb-spacing-sm);
+  }
+
+  .ifb-container.top-left,
+  .ifb-container.top-right {
+    top: var(--ifb-spacing-md);
+  }
+
+  .ifb-container.bottom-left,
+  .ifb-container.bottom-right {
+    bottom: var(--ifb-spacing-md);
+  }
+
+  .ifb-container.top-left,
+  .ifb-container.bottom-left {
+    left: var(--ifb-spacing-md);
+  }
+
+  .ifb-container.top-right,
+  .ifb-container.bottom-right {
+    right: var(--ifb-spacing-md);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  .ifb-main-button,
+  .ifb-action-button {
+    transition: none;
+  }
+}

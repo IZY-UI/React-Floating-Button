@@ -1,31 +1,88 @@
 {
-  "name": "react-floating-button",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "boxicons": "^2.1.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.56.1",
-    "web-vitals": "^2.1.4"
+  "name": "@izy-ui/react-floating-button",
+  "version": "2.0.0",
+  "description": "Modern, accessible floating action button for React with TypeScript support",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/style.css"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "MIGRATION.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:lib": "vite build --mode lib",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build:lib"
   },
+  "keywords": [
+    "react",
+    "floating-button",
+    "fab",
+    "floating-action-button",
+    "react-component",
+    "typescript",
+    "accessible",
+    "ui-component"
+  ],
+  "author": "Dhanushka I Dewinuwara",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IZY-UI/React-Floating-Button.git"
   },
-  "keywords": [],
-  "author": "Dhanushka I Dewinuwara",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/IZY-UI/React-Floating-Button/issues"
   },
-  "homepage": "https://github.com/IZY-UI/React-Floating-Button#readme"
+  "homepage": "https://github.com/IZY-UI/React-Floating-Button#readme",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.309.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/ui": "^1.0.4",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "globals": "^16.5.0",
+    "jsdom": "^23.0.1",
+    "prettier": "^3.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.50.1",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0",
+    "vitest": "^1.0.4"
+  }
 }
